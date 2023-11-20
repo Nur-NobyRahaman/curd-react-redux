@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +35,70 @@
   to {
     transform: rotate(360deg);
   }
+}
+.navbar{
+  background-color: goldenrod;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+a{
+  text-decoration: none;
+  color: white;
+  margin-right: 15px;
+}
+a:hover{
+  color:lightblue;
+}
+input{
+  padding: 5px;
+  width: 250px;
+  /* border-radius: 5px; */
+}
+form  button{
+  padding: 10px 15px;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 5px;
+}
+
+form button:hover{
+  background-color: greenyellow;
+}
+.showBooks_container{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+table {
+  margin-top: 70px;
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+}
+th,td{
+  border: 1px solid black;
+  padding: 15px 20px;
+}
+
+.delete_button{
+  border:none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: orangered;
+  color: white;
+  margin: 8px;
+}
+.delete_button:hover{
+  background-color: rgb(230, 87, 87);
+}
+.edit_button{
+  border:none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: orange;
+  color: white;
+  margin: 8px;
+}
+.edit_button:hover{
+  background-color: rgb(212, 116, 81);
 }
