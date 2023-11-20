@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   books: [
     {
-      id: new Date().getTime().toString(),
+      id: 1,
       title: "Bangladesh storey",
       name: "Nur-Noby",
     },
     {
-      id: 1 + new Date().getTime().toString(),
+      id: 2,
       title: "Bangladesh storey",
       name: "Nur-Noby",
     },
@@ -29,8 +29,21 @@ const booksSlice = createSlice({
       );
       state.books = filteredBooks;
     },
+    editBook: (state, action) => {
+      const editBook = state.books.map((book) => {
+        if (book.id === action.payload.id) {
+          return {
+            ...book,
+            name: action.payload.name,
+            title: action.payload.title,
+          };
+        }
+        return book;
+      });
+      state.books = editBook;
+    },
   },
 });
 
-export const { showBooks, addBook, deleteBook } = booksSlice.actions;
+export const { showBooks, addBook, deleteBook, editBook } = booksSlice.actions;
 export default booksSlice.reducer;
