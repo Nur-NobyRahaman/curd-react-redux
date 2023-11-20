@@ -8,7 +8,7 @@ const initialState = {
       name: "Nur-Noby",
     },
     {
-      id: new Date().getTime().toString(),
+      id: 1 + new Date().getTime().toString(),
       title: "Bangladesh storey",
       name: "Nur-Noby",
     },
@@ -19,12 +19,18 @@ const booksSlice = createSlice({
   name: "books",
   initialState: initialState,
   reducers: {
-      showBooks: (state) => state,
-      addBook: (state, action) => {
-          state.books= [...state.books,action.payload]
-      }
+    showBooks: (state) => state,
+    addBook: (state, action) => {
+      state.books = [...state.books, action.payload];
+    },
+    deleteBook: (state, action) => {
+      const filteredBooks = state.books.filter(
+        (book) => book.id !== action.payload
+      );
+      state.books = filteredBooks;
+    },
   },
 });
 
-export const { showBooks,addBook } = booksSlice.actions;
+export const { showBooks, addBook, deleteBook } = booksSlice.actions;
 export default booksSlice.reducer;

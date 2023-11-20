@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteBook } from "./ShowBooksSlice";
 
 const ShowBooks = () => {
-  const { books } = useSelector((state) => state.showBooksReducer);
+    const { books } = useSelector((state) => state.showBooksReducer);
+    const dispatch=useDispatch()
   return (
     <div className="showBooks_container">
       <div>
@@ -24,7 +26,7 @@ const ShowBooks = () => {
                 <td>{book?.name}</td>
                 <td>
                   <button className="edit_button">Edit</button>
-                  <button className="delete_button">Delete</button>
+                  <button onClick={()=>dispatch(deleteBook(book?.id))} className="delete_button">Delete</button>
                 </td>
               </tr>
             ))}
